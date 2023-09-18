@@ -12,7 +12,7 @@ else{
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Chaussette | retrouvé votre paire </title>
-  <link rel="stylesheet" href="css/card.css">
+  <link rel="stylesheet" href="assets/css/card.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
@@ -85,7 +85,7 @@ else{
     </div>
 
     <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
-    <script  src="js/card.js"></script>
+    <script  src="assets/javascript/card.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
