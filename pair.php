@@ -2,7 +2,7 @@
 <?php if (empty($_SESSION['username'])) { header("Location: home.php");}?>
 <?php include('partials/head.php'); ?>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-<link rel="stylesheet" href="assets/css/paire.css" />
+<link rel="stylesheet" href="assets/css/pair.css" />
 </head>
 <body>
 
