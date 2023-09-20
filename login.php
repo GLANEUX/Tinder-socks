@@ -17,13 +17,13 @@
   <div class="screen">
     <div class="form-container">
       <div class="form-content">
-        <h2><a href="./index.php">Chaussette</a></h2>
+        <h2><a href="index.php">Chaussette</a></h2>
         <h3>Connexion</h3>
         <?php   
         if(isset($_SESSION['error_connexion'] )) { ?>
                         <p ><?php echo $_SESSION['error_connexion'] ; ?></p>
                     <?php } ?>
-        <form action="connexion.php" method="POST">
+        <form action="controller/login_controller.php" method="POST">
        <label for="username" id="email-label">
           <input type="text" id="username" placeholder="Pseudo" name="username" required /></label>
         <label for="password" id="password-label">

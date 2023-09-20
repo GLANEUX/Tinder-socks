@@ -21,7 +21,7 @@ require('config/setting.php');
   <div class="screen">
     <div class="form-container">
       <div class="form-content">
-        <h2><a href="./index.php">Chaussette</a></h2>
+        <h2><a href="index.php">Chaussette</a></h2>
         <h3>Créer votre compte</h3>
         <p>
           Nous avons besoin de vos informations pour trouver votre paire
@@ -32,7 +32,7 @@ require('config/setting.php');
             <?php echo $_SESSION['error_inscription']; ?>
           </p>
         <?php } ?>
-        <form action="inscription.php" method="POST"  enctype="multipart/form-data">
+        <form action="controller/register_controller.php" method="POST"  enctype="multipart/form-data">
           <h3>Dites nous en plus à propos de vous</h3>
           <div class="main-informations">
             <label for="name">

@@ -23,7 +23,7 @@ if (empty($_SESSION['username'])) {
     </head>
 
     <body class="d-flex flex-column min-vh-100">
-        <?php include('partials/header.php'); ?>
+        <?php include('partials/navbar.php'); ?>
 
       
   <div class="screen">
@@ -53,7 +53,7 @@ if (empty($_SESSION['username'])) {
             <?php echo $_SESSION['error_inscription']; ?>
           </p>
         <?php } ?>
-        <form action="modifier.php" method="POST"  enctype="multipart/form-data">
+        <form action="controller/compte_modified_controller.php" method="POST"  enctype="multipart/form-data">
           <h3>Modifier vos informations personnel</h3>
           <div class="main-informations">
             <label for="name">

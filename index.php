@@ -25,17 +25,21 @@ else{
   <nav class="navbar">
     <a class="logo" href="index.php">Chaussette</a>
     <div class="links-navbar">
-      <!-- <ul>
+      <ul>
         <li>
-          <a href="#">Contact Us</a>
+          <a href="#" class="tersi-button">Contact Us</a>
         </li>
-        <li><a href="#">Q&A ?</a></li>
+        <li><a href="#" class="tersi-button">Q&A ?</a></li>
         <li>
-          <a href="#">About</a>
-        </li> -->
+          <a href="#" class="tersi-button">About</a>
+        </li>
+        <li>
+          <a href="register.php" class="tersi-button">Inscription</a>
+        </li>
         <li>
           <a href="login.php" class="secondary-button">Connexion</a>
         </li>
+     
       </ul>
     </div>
     <div class="menu-hamburger">

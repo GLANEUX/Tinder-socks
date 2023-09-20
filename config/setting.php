@@ -20,4 +20,4 @@ try{
 	die('Erreur : '.$e->getMessage());
 }
 
-include('core.php');
+include('config/core.php');

@@ -75,7 +75,7 @@ allCards.forEach(function (el) {
 
       // Envoi de l'ID_M au fichier PHP via une requête AJAX
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'like.php', true);
+      xhr.open('POST', '../controller/like_controller.php', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
      
       xhr.onreadystatechange = function () {
@@ -120,7 +120,7 @@ function createButtonListener(love) {
 
       // Envoi de l'ID_M au fichier PHP via une requête AJAX
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'like.php', true);
+      xhr.open('POST', '../controller/like_controller.php', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
