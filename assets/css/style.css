@@ -24,7 +24,16 @@ body {
   padding: 0;
   text-decoration: none;
 }
+.title{
+  text-shadow: 3px 4px 40px;
+  transition: 0.2s;
 
+}
+.title:hover{
+  text-shadow: 3px 4px 60px;
+  transition: 0.2s;
+
+}
 a {
   -webkit-tap-highlight-color: transparent;
 }
@@ -73,13 +82,16 @@ header{
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px 50px 40px;
+  padding: 20px 40px;
   width: 100%;
-  position: absolute;
   transition: all 0.5s;
+  position: relative;
   z-index: 4;
 }
 
+.fa-heart {
+    color: #FFACE4;
+}
 .navbar .links-navbar ul {
   display: flex;
   align-items: center;
@@ -225,7 +237,7 @@ footer p {
     background-size: cover;
   }
   .screen {
-    height: 96vh;}
+    height: 100vh;}
 
 
   /* ------ navbar responsive style ------  */
@@ -235,7 +247,7 @@ footer p {
 
   .navbar .menu-hamburger {
     display: flex;
-    z-index: 1;
+    z-index: 2;
   }
 
   .links-navbar {
@@ -251,7 +263,7 @@ footer p {
     top: 0;
     transition: 0.5s;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
   }
 
   .mobile-menu {

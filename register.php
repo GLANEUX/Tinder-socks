@@ -9,7 +9,7 @@
     <div class="form-container">
       <div class="form-content">
 
-        <h2><a href="home.php">Chaussette</a></h2>
+        <h2><a class="title" href="home.php">Chaussette</a></h2>
         <h3>Créer votre compte</h3>
         <p> Nous avons besoin de vos informations pour trouver votre paire </p>
 
@@ -118,4 +118,5 @@
   </div>
 </body>
 <script src="assets/javascript/add.js"></script>
+<script src="assets/javascript/volet.js"></script>
 </html>

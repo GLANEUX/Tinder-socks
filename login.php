@@ -8,7 +8,7 @@
   <div class="screen">
     <div class="form-container">
       <div class="form-content">
-        <h2><a href="home.php">Chaussette</a></h2>
+        <h2><a class="title" href="home.php">Chaussette</a></h2>
         <h3>Connexion</h3>
         
         <?php if (isset($_SESSION['error_connexion'])) { ?>
@@ -28,4 +28,5 @@
     </div>
   </div>
 </body>
+<script src="assets/javascript/volet.js"></script>
 </html>

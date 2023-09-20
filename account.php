@@ -142,4 +142,5 @@
   </div>
 </body>
 <script src="assets/javascript/add.js"></script>
+<script src="assets/javascript/volet.js"></script>
 </html>

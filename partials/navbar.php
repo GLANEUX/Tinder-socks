@@ -1,5 +1,6 @@
 <header class="navbar">
-  <a class="logo" href="index.php">Chaussette</a>
+  <a class="logo" href="index.php">Chaussette   <?php if (isset($_SESSION['username'])) { ?> - <?= $_SESSION['username'];  }  ?>
+</a>
   <div class="links-navbar">
     <ul>
       <?php if (isset($_SESSION['username'])) { ?>
@@ -20,13 +21,13 @@
       { 
       ?>
 
-        <li>
+        <!-- <li>
           <a href="#" class="tersi-button">Contact Us</a>
         </li>
         <li><a href="#" class="tersi-button">Q&A ?</a></li>
         <li>
           <a href="#" class="tersi-button">About</a>
-        </li>
+        </li> -->
         <li>
           <a href="register.php" class="tersi-button">Inscription</a>
         </li>

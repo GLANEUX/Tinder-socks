@@ -8,12 +8,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80%;
+  height: 90%;
   width: 70%;
   padding: 20px 0;
-  margin-top: 6%;
 }
+.screen {
+  height: 85vh;
 
+}
 .form-content {
   display: flex;
   flex-direction: column;
@@ -192,8 +194,7 @@ input:focus {
 
 @media screen and (max-width: 900px) {
   .form-container {
-    height: 100%;
-    width: 100%;
-    border-radius: inherit;
+    height: 95%;
+    width: 95%;
   }
 }

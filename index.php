@@ -1,7 +1,6 @@
 <?php require('config/setting.php'); ?>
 <?php if (empty($_SESSION['username'])) { header("Location: home.php");}?>
 <?php include('partials/head.php'); ?>
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 <link rel="stylesheet" href="assets/css/card.css">
 </head>
@@ -86,4 +85,5 @@
 <script src="assets/javascript/card.js"></script>
 <!-- Popup when 2 socks like eachothers -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="assets/javascript/volet.js"></script>
 </html>

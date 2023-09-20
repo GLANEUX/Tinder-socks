@@ -1,6 +1,7 @@
 <?php require('config/setting.php');?>
 <?php if(isset($_SESSION['username'])){header("Location: index.php");}?>
 <?php include('partials/head.php'); ?>
+<style>.screen {height: 85vh;}</style>
 </head>
 <body>
 <?php include('partials/navbar.php'); ?>
