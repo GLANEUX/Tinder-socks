@@ -73,7 +73,7 @@ if(!empty($_POST['password'])){
 
 $_SESSION['username'] = $_POST['name'];
   // Redirection vers l'accueil
-  header('Location: ../compte.php');
+  header('Location: ../account.php');
   exit;
 } else {
 

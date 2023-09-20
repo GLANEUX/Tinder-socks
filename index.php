@@ -1,9 +1,7 @@
-<?php require('config/setting.php');
- if(isset($_SESSION['username'])){
-    header("Location: connected.php");
-}
-else{
-?>
+<?php require('config/setting.php'); ?>
+<?php if (empty($_SESSION['username'])) { header("Location: login.php");}?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,59 +9,101 @@ else{
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="shortcut icon" href="assets/img/favicon.png" />
   <title>Chaussette | retrouvé votre paire </title>
-  <style>
-    .navbar{
-      position: absolute;
-    }
-  </style>
+
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/card.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 </head>
 
-<body>
-  <nav class="navbar">
-    <a class="logo" href="index.php">Chaussette</a>
-    <div class="links-navbar">
-      <ul>
-        <li>
-          <a href="#" class="tersi-button">Contact Us</a>
-        </li>
-        <li><a href="#" class="tersi-button">Q&A ?</a></li>
-        <li>
-          <a href="#" class="tersi-button">About</a>
-        </li>
-        <li>
-          <a href="register.php" class="tersi-button">Inscription</a>
-        </li>
-        <li>
-          <a href="login.php" class="secondary-button">Connexion</a>
-        </li>
-     
-      </ul>
+<body class="d-flex flex-column min-vh-100">
+  <?php include('partials/navbar.php'); ?>
+  <div class="tinder">
+    <div class="tinder--status">
+      <i class="fa fa-remove"></i>
+      <i class="fa fa-heart"></i>
     </div>
-    <div class="menu-hamburger">
-      <div class="button-burger-menu"></div>
-    </div>
-  </nav>
+    <?php
 
-  <main>
-    <div class="screen">
-      <div class="home">
-        <h1>Chaussette</h1>
-        <h2><span class="slogan-app"></span></h2>
-        <a href="register.php" class="primary-button">Créer mon compte</a>
-        <a href="login.php" class="mobile-login">Connexion</a>
-      </div>
-    </div>
-  </main>
 
-  
-  <script src="assets/javascript/volet.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="assets/javascript/auto_type.js"></script>
+
+    $username = $_SESSION['username'];
+    $couleurs = $conn->prepare("SELECT `couleur`, `marque`, `taille` FROM `users` WHERE `username` LIKE '$username'");
+    $couleurs->execute();
+    $resultat = $couleurs->fetch(PDO::FETCH_ASSOC); // Récupérez la première ligne du résultat
+    $couleur = $resultat['couleur']; // Stockez la couleur dans la variable $couleur
+    $marque = $resultat['marque'];
+    $taille = $resultat['taille'];
+    $data = $conn->prepare("SELECT * FROM `users` WHERE `couleur` LIKE '$couleur' AND `marque` LIKE '$marque' AND `taille` LIKE '$taille' AND NOT username = '$username'");
+    $data->execute();
+    $socks = $data->fetchAll(PDO::FETCH_ASSOC);
+    ?>
+    <div class="tinder--cards">
+      <?php
+      foreach ($socks as $sock):
+        $ID_M = $sock['username'];
+        $id_u = $conn->prepare("SELECT * FROM `paire` WHERE `ID_U` LIKE '$username' AND `ID_M` LIKE '$ID_M'");
+        $id_u->execute();
+        $id_us = $id_u->fetchAll(PDO::FETCH_ASSOC);
+        // rajout !
+        if (count($id_us) == 0) {
+          ?>
+
+          <div class="tinder--card overflow-auto" ID_M="<?= $sock['username']; ?>">
+            <figure>
+              <img src=<?= $sock['image'] ?> alt="#">
+            </figure>
+            <h3>
+              <?= $sock['username']; ?>
+            </h3>
+            <?php if (!empty($sock['taille']) || !empty($sock['couleur']) || !empty($sock['marque'])): ?>
+              <div class="info">
+                <?php if (!empty($sock['taille'])): ?>
+                  <p>
+                    <?= $sock['taille']; ?>
+                  </p>
+                <?php endif ?>
+                <?php if (!empty($sock['couleur'])): ?>
+                  <p class="color">
+                    <?= $sock['couleur']; ?>
+                  </p>
+                <?php endif ?>
+                <?php if (!empty($sock['marque'])): ?>
+                  <p>
+                    <?= $sock['marque']; ?>
+                  </p>
+                <?php endif ?>
+              </div>
+              <?php if (!empty($sock['description'])): ?>
+                <p class="description">
+                  <?= $sock['description']; ?>
+                </p>
+              <?php endif ?>
+            <?php endif ?>
+          </div>
+
+        <?php }endforeach; ?>
+    </div>
+
+    <div class="tinder--buttons">
+      <button id="nope"><i class="fa fa-remove"></i></button>
+      <button id="love"><i class="fa fa-heart"></i></button>
+
+    </div>
+  </div>
+
+
+
+  <script src="assets/javascript/card.js"></script>
+  <!-- Popup when 2 socks like eachothers -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Annimation of the card  -->
+  <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
 </body>
 
 </html>
-
-<?php } ?>

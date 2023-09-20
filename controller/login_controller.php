@@ -12,7 +12,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
 
 
     
-      header("Location: ../connected.php");
+      header("Location: ../index.php");
  
   }else{
     $_SESSION['error_connexion'] = "Le nom d'utilisateur ou le mot de passe est incorrect.";

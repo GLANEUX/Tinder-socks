@@ -70,7 +70,7 @@ if (!empty($_POST) && isset($name) && isset($email) && isset($password)) {
 		':d' => $_POST['description']
 	]);
          $_SESSION['username'] = $name;
-            header("Location: ../connected.php");
+            header("Location: ../index.php");
 }
     }
 

@@ -1,6 +1,6 @@
 
 <header class="navbar">
-  <a class="logo" href="connected.php">Chaussette</a>
+  <a class="logo" href="index.php">Chaussette</a>
   <div class="links-navbar">
     <ul>
 
@@ -8,10 +8,10 @@
         <a href=".?logout" class="secondary-button">Se déconnecter</a>
       </li>
       <li style="margin: 0;">
-        <a href="compte.php" class="secondary-button" ><i class="fa-solid fa-user"></i></a>
+        <a href="account.php" class="secondary-button" ><i class="fa-solid fa-user"></i></a>
       </li>
       <li style="margin: 0;">
-        <a href="paire.php" class="secondary-button"  > <i class="fa-solid fa-heart"></i></a>
+        <a href="pair.php" class="secondary-button"  > <i class="fa-solid fa-heart"></i></a>
       </li>
 
 
