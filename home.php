@@ -1,9 +1,7 @@
 <?php require('config/setting.php');?>
 <?php if(isset($_SESSION['username'])){header("Location: index.php");}?>
 <?php include('partials/head.php'); ?>
-
 </head>
-
 <body>
 <?php include('partials/navbar.php'); ?>
 
@@ -18,10 +16,8 @@
     </div>
   </main>
 
-
-  <script src="assets/javascript/volet.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="assets/javascript/auto_type.js"></script>
 </body>
-
+<script src="assets/javascript/volet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="assets/javascript/auto_type.js"></script>
 </html>

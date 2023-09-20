@@ -1,21 +1,24 @@
-
 <header class="navbar">
   <a class="logo" href="index.php">Chaussette</a>
   <div class="links-navbar">
     <ul>
-    <?php if(isset($_SESSION['username'])){ ?> 
+      <?php if (isset($_SESSION['username'])) { ?>
 
-      <li >
-        <a href=".?logout" class="secondary-button">Se déconnecter</a>
-      </li>
-      <li >
-        <a href="account.php" class="secondary-button" ><i class="fa fa-user"></i></a>
-      </li>
-      <li>
-        <a href="pair.php" class="secondary-button"  > <i class="fa fa-heart"></i></a>
-      </li>
+        <li>
+          <a href=".?logout" class="secondary-button">Se déconnecter</a>
+        </li>
+        <li>
+          <a href="account.php" class="secondary-button"><i class="fa fa-user"></i></a>
+        </li>
+        <li>
+          <a href="pair.php" class="secondary-button"> <i class="fa fa-heart"></i></a>
+        </li>
 
-      <?php } else {?>
+      <?php 
+      } 
+      else 
+      { 
+      ?>
 
         <li>
           <a href="#" class="tersi-button">Contact Us</a>
@@ -31,7 +34,7 @@
           <a href="login.php" class="secondary-button">Connexion</a>
         </li>
 
-        <?php }?>
+      <?php } ?>
 
     </ul>
   </div>

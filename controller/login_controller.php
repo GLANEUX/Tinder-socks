@@ -10,8 +10,6 @@ if (isset($_POST['username']) && isset($_POST['password'])){
   if(count($users)==1){
       $_SESSION['username'] = $username;
 
-
-    
       header("Location: ../index.php");
  
   }else{
