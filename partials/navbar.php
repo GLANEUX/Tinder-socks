@@ -3,18 +3,35 @@
   <a class="logo" href="index.php">Chaussette</a>
   <div class="links-navbar">
     <ul>
+    <?php if(isset($_SESSION['username'])){ ?> 
 
-      <li style="margin: 0;">
+      <li >
         <a href=".?logout" class="secondary-button">Se déconnecter</a>
       </li>
-      <li style="margin: 0;">
-        <a href="account.php" class="secondary-button" ><i class="fa-solid fa-user"></i></a>
+      <li >
+        <a href="account.php" class="secondary-button" ><i class="fa fa-user"></i></a>
       </li>
-      <li style="margin: 0;">
-        <a href="pair.php" class="secondary-button"  > <i class="fa-solid fa-heart"></i></a>
+      <li>
+        <a href="pair.php" class="secondary-button"  > <i class="fa fa-heart"></i></a>
       </li>
 
+      <?php } else {?>
 
+        <li>
+          <a href="#" class="tersi-button">Contact Us</a>
+        </li>
+        <li><a href="#" class="tersi-button">Q&A ?</a></li>
+        <li>
+          <a href="#" class="tersi-button">About</a>
+        </li>
+        <li>
+          <a href="register.php" class="tersi-button">Inscription</a>
+        </li>
+        <li>
+          <a href="login.php" class="secondary-button">Connexion</a>
+        </li>
+
+        <?php }?>
 
     </ul>
   </div>

@@ -1,28 +1,14 @@
 <?php require('config/setting.php'); ?>
-<?php if (empty($_SESSION['username'])) { header("Location: login.php");}?>
+<?php if (empty($_SESSION['username'])) { header("Location: home.php");}?>
+<?php include('partials/head.php'); ?>
 
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="assets/img/favicon.png" />
-  <title>Chaussette | retrouvé votre paire </title>
-
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/card.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="assets/css/card.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
-  <?php include('partials/navbar.php'); ?>
+<body>
+<?php include('partials/navbar.php'); ?>
   <div class="tinder">
     <div class="tinder--status">
       <i class="fa fa-remove"></i>
@@ -98,12 +84,13 @@
   </div>
 
 
-
+   <!-- Annimation of the card always before card.js -->
+   <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
   <script src="assets/javascript/card.js"></script>
+
   <!-- Popup when 2 socks like eachothers -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <!-- Annimation of the card  -->
-  <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
+
 </body>
 
 </html>

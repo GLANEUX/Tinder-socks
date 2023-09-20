@@ -1,22 +1,12 @@
 <?php require('config/setting.php');?>
 <?php if(isset($_SESSION['username'])){header("Location: index.php");}?>
-
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="assets/img/favicon.png" />
-  <title>Chaussette | retrouvé votre paire </title>
+<?php include('partials/head.php'); ?>
 
   <link rel="stylesheet" href="assets/css/register.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
+
   <div class="screen">
     <div class="form-container">
       <div class="form-content">
@@ -161,116 +151,8 @@
     </div>
   </div>
 </body>
-<script>
-  function ajouterCouleur() {
-    var newColorInput = document.getElementById('newColor');
-    var newColor = newColorInput.value.trim();
+<script src="assets/javascript/add.js"></script>
 
-    if (newColor !== '') {
-      var couleurContainer = document.getElementById('couleurContainer');
-
-      // Vérifiez d'abord si un bouton radio avec la même valeur existe
-      var existingRadio = couleurContainer.querySelector('input[type="radio"][value="' + newColor + '"]');
-
-      if (!existingRadio) {
-        // S'il n'existe pas, ajoutez-le
-        var div = document.createElement('div');
-        div.innerHTML = `
-                <label for="${newColor}">
-                    <input id="${newColor}" type="radio" name="couleur" value="${newColor}" checked />
-                    <span>${newColor}</span>
-                </label>
-            `;
-        couleurContainer.appendChild(div);
-      } else {
-        // S'il existe déjà, sélectionnez-le
-        existingRadio.checked = true;
-      }
-
-      // Effacer le champ de saisie
-      newColorInput.value = '';
-    } else {
-      alert("Veuillez entrer une couleur valide.");
-    }
-  }
-
-  // Faites de même pour les fonctions ajouterMarque et ajouterTaille en utilisant les mêmes principes.
-
-</script>
-
-<script>
-  function ajouterMarque() {
-    var newMarqueInput = document.getElementById('newMarque');
-    var newMarque = newMarqueInput.value.trim();
-
-    if (newMarque !== '') {
-      var marqueContainer = document.getElementById('marqueContainer');
-
-      // Vérifiez d'abord si un bouton radio avec la même valeur existe
-      var existingRadio = marqueContainer.querySelector('input[type="radio"][value="' + newMarque + '"]');
-
-      if (!existingRadio) {
-        // S'il n'existe pas, ajoutez-le
-        var div = document.createElement('div');
-        div.innerHTML = `
-                <label for="${newMarque}">
-                    <input id="${newMarque}" type="radio" name="marque" value="${newMarque}" checked />
-                    <span>${newMarque}</span>
-                </label>
-            `;
-        marqueContainer.appendChild(div);
-      } else {
-        // S'il existe déjà, sélectionnez-le
-        existingRadio.checked = true;
-      }
-
-      // Effacer le champ de saisie
-      newMarqueInput.value = '';
-    } else {
-      alert("Veuillez entrer une marque valide.");
-    }
-  }
-
-  // Faites de même pour les fonctions ajouterMarque et ajouterTaille en utilisant les mêmes principes.
-
-</script>
-
-<script>
-  function ajouterTaille() {
-    var newTailleInput = document.getElementById('newTaille');
-    var newTaille = newTailleInput.value.trim();
-
-    if (newTaille !== '') {
-      var tailleContainer = document.getElementById('tailleContainer');
-
-      // Vérifiez d'abord si un bouton radio avec la même valeur existe
-      var existingRadio = tailleContainer.querySelector('input[type="radio"][value="' + newTaille + '"]');
-
-      if (!existingRadio) {
-        // S'il n'existe pas, ajoutez-le
-        var div = document.createElement('div');
-        div.innerHTML = `
-                <label for="${newTaille}">
-                    <input id="${newTaille}" type="radio" name="taille" value="${newTaille}" checked />
-                    <span>${newTaille}</span>
-                </label>
-            `;
-        tailleContainer.appendChild(div);
-      } else {
-        // S'il existe déjà, sélectionnez-le
-        existingRadio.checked = true;
-      }
-
-      // Effacer le champ de saisie
-      newTailleInput.value = '';
-    } else {
-      alert("Veuillez entrer une taille valide.");
-    }
-  }
-
-  // Faites de même pour les fonctions ajouterMarque et ajouterTaille en utilisant les mêmes principes.
-
-</script>
 
 
 </html>

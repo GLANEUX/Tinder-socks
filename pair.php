@@ -1,24 +1,12 @@
 <?php require('config/setting.php'); ?>
 <?php if (empty($_SESSION['username'])) { header("Location: login.php");}?>
+<?php include('partials/head.php'); ?>
 
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="assets/img/favicon.png" />
-  <title>Chaussette | retrouvé votre paire </title>
-
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/all.min.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
   <link rel="stylesheet" href="assets/css/paire.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body>
   <?php include('partials/navbar.php'); ?>
 
   <div class="screen">
@@ -94,6 +82,5 @@
 
 <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
 
-</body>
 
 </html>

@@ -1,50 +1,11 @@
 <?php require('config/setting.php');?>
 <?php if(isset($_SESSION['username'])){header("Location: index.php");}?>
+<?php include('partials/head.php'); ?>
 
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="assets/img/favicon.png" />
-  <title>Chaussette | retrouvé votre paire </title>
-
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    .navbar {
-      position: absolute;
-    }
-  </style>
 </head>
 
 <body>
-  <nav class="navbar">
-    <a class="logo" href="home.php">Chaussette</a>
-    <div class="links-navbar">
-      <ul>
-        <li>
-          <a href="#" class="tersi-button">Contact Us</a>
-        </li>
-        <li><a href="#" class="tersi-button">Q&A ?</a></li>
-        <li>
-          <a href="#" class="tersi-button">About</a>
-        </li>
-        <li>
-          <a href="register.php" class="tersi-button">Inscription</a>
-        </li>
-        <li>
-          <a href="login.php" class="secondary-button">Connexion</a>
-        </li>
-
-      </ul>
-    </div>
-    <div class="menu-hamburger">
-      <div class="button-burger-menu"></div>
-    </div>
-  </nav>
+<?php include('partials/navbar.php'); ?>
 
   <main>
     <div class="screen">

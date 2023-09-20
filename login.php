@@ -1,21 +1,12 @@
 <?php require('config/setting.php');?>
 <?php if(isset($_SESSION['username'])){header("Location: index.php");}?>
-
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="assets/img/favicon.png" />
-  <title>Chaussette | retrouvé votre paire </title>
+<?php include('partials/head.php'); ?>
 
   <link rel="stylesheet" href="assets/css/login.css" />
 </head>
 
 <body>
+
   <div class="screen">
     <div class="form-container">
       <div class="form-content">
